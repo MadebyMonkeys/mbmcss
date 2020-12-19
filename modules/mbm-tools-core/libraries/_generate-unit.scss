@@ -1,0 +1,21 @@
+@mixin _mbm-generate-unit($property, $suffix, $units) {
+    $suffix: if($suffix, #{"-" + _mbm-direction($suffix)}, "");
+
+    @if _mbm-is-number($units) {
+        #{$property + $suffix}: $units;
+    }
+
+    @if _mbm-is-map($units) {
+        @if _mbm-map-contains-null($units) {
+            #{$property + $suffix}: map-get($units, null);
+        }
+
+        @each $breakpoint-name, $gutter-size in $units {
+            @if $breakpoint-name {
+                @include _mbm-breakpoint($breakpoint-name) {
+                    #{$property + $suffix}: $gutter-size;
+                }
+            }
+        }
+    }
+}

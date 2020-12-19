@@ -1,0 +1,17 @@
+/**
+ * Background color names
+ *
+ * Type: Map
+ */
+
+$mbm-utils-bgcolor-names: ();
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+
+$mbm-utils-bgcolor-namespace: "bgcolor-";
+
+@import "../modules/mbm-utils-bgcolor/utilities.bgcolor";

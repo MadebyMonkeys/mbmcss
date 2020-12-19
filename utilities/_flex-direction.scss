@@ -1,0 +1,29 @@
+/**
+ * Enable / Disable breakpoint specific classes
+ *
+ * Type: Boolean
+ */
+
+$mbm-utils-flex-direction-res: $mbm-global-res;
+
+/**
+  * Override breakpoints map only for align utility
+  *
+  * Type: Type: Map
+  */
+
+$mbm-utils-flex-direction-breakpoints: $mbm-global-breakpoints;
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+
+$mbm-utils-flex-direction-namespace: "flex-direction-";
+$mbm-utils-flex-direction-name-row: "row";
+$mbm-utils-flex-direction-name-row-reverse: "row-reverse";
+$mbm-utils-flex-direction-name-column: "col";
+$mbm-utils-flex-direction-name-column-reverse: "col-reverse";
+
+@import "../modules/mbm-utils-flex-direction/utilities.flex-direction";

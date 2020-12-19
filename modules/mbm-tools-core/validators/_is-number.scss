@@ -1,0 +1,3 @@
+@function _mbm-is-number($number) {
+    @return type-of($number) == "number";
+}

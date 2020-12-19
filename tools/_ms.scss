@@ -1,0 +1,26 @@
+/**
+ * The base value the scale starts at.
+ *
+ * Number
+ */
+
+$mbm-tools-ms-base: 16px;
+
+/**
+  * The ratio the scale is built on
+  *
+  * Unitless Number
+  */
+
+$mbm-tools-ms-ratio: 1.2;
+
+/**
+  * Length of scale ( right part of the decimal
+  * point ) ms will be rounded to.
+  *
+  * Unitless Number
+  */
+
+$mbm-tools-ms-scale: 3;
+
+@import "../modules/mbm-tools-ms/tools.ms";

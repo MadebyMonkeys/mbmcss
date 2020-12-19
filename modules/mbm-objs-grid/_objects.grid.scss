@@ -1,0 +1,137 @@
+// Options
+
+$mbm-objs-grid: true;
+
+$mbm-objs-grid-flex: $mbm-global-flex !default;
+$mbm-objs-grid-aligned: false !default;
+$mbm-objs-grid-rev: false !default;
+$mbm-objs-grid-equal-height: false !default;
+
+$mbm-objs-grid-namespace: "grid" !default;
+$mbm-objs-grid-cell-name: "cell" !default;
+$mbm-objs-grid-name-gutter: "-gutter" !default;
+
+$mbm-objs-grid-align-name-right: "right" !default;
+$mbm-objs-grid-align-name-center: "center" !default;
+$mbm-objs-grid-align-name-top: "top" !default;
+$mbm-objs-grid-align-name-middle: "middle" !default;
+$mbm-objs-grid-align-name-bottom: "bottom" !default;
+$mbm-objs-grid-align-name-around: "around" !default;
+$mbm-objs-grid-align-name-between: "between" !default;
+$mbm-objs-grid-align-name-reverse: "rev" !default;
+$mbm-objs-grid-align-name-equal-height: "equal-height" !default;
+
+$mbm-objs-grid-gutter-default: $mbm-global-gutter-default !default;
+$mbm-objs-grid-gutter-extra: () !default;
+
+// Grid Object namespace variable(s)
+$mbm-objs-grid-var: $mbm-global-objects-namespace + $mbm-objs-grid-namespace;
+$mbm-objs-grid-var-mod: $mbm-objs-grid-var + "--";
+
+$mbm-objs-grid-cell-var: $mbm-objs-grid-var + "__" + $mbm-objs-grid-cell-name;
+
+// Grid Object Core
+
+.#{$mbm-objs-grid-var} {
+	@include _mbm-generate-unit(
+		"margin",
+		"left",
+		_mbm-negative-unit($mbm-objs-grid-gutter-default)
+	);
+	list-style: none;
+	box-sizing: border-box;
+
+	& > .#{$mbm-objs-grid-cell-var} {
+		@include _mbm-generate-unit(
+			"padding",
+			"left",
+			$mbm-objs-grid-gutter-default
+		);
+		width: 100%;
+		box-sizing: inherit;
+	}
+}
+
+// Grid Object Extra Gutters
+
+@each $gutter-name, $gutter-size in $mbm-objs-grid-gutter-extra {
+	.#{$mbm-objs-grid-var + $mbm-objs-grid-name-gutter}#{$gutter-name} {
+		@include _mbm-generate-unit(
+			"margin",
+			"left",
+			_mbm-negative-unit($gutter-size)
+		);
+
+		& > .#{$mbm-objs-grid-cell-var} {
+			@include _mbm-generate-unit("padding", "left", $gutter-size);
+		}
+	}
+}
+
+// Grid Object Flex
+
+@if ($mbm-objs-grid-flex == true) {
+	.#{$mbm-objs-grid-var} {
+		display: flex;
+		flex-flow: row wrap;
+
+		& > .#{$mbm-objs-grid-cell-var} {
+			box-sizing: inherit;
+			flex-basis: auto;
+			min-width: 0;
+		}
+	}
+
+	@if ($mbm-objs-grid-aligned == true) {
+		.#{$mbm-objs-grid-var-mod + $mbm-objs-grid-align-name-center} {
+			justify-content: center;
+		}
+
+		.#{$mbm-objs-grid-var-mod + $mbm-objs-grid-align-name-right} {
+			justify-content: flex-end;
+		}
+
+		.#{$mbm-objs-grid-var-mod + $mbm-objs-grid-align-name-top} {
+			align-items: flex-start;
+		}
+
+		.#{$mbm-objs-grid-var-mod + $mbm-objs-grid-align-name-middle} {
+			align-items: center;
+		}
+
+		.#{$mbm-objs-grid-var-mod + $mbm-objs-grid-align-name-bottom} {
+			align-items: flex-end;
+		}
+
+		.#{$mbm-objs-grid-var-mod + $mbm-objs-grid-align-name-around} {
+			justify-content: space-around;
+		}
+
+		.#{$mbm-objs-grid-var-mod + $mbm-objs-grid-align-name-between} {
+			justify-content: space-between;
+		}
+
+		// Grid Object Flex Reverse
+		@if ($mbm-objs-grid-rev == true) {
+			.#{$mbm-objs-grid-var-mod + $mbm-objs-grid-align-name-reverse} {
+				flex-direction: row-reverse;
+			}
+		}
+
+		@if ($mbm-objs-grid-equal-height == true) {
+			.#{$mbm-objs-grid-var-mod + $mbm-objs-grid-align-name-reverse} {
+				@include _mbm-direction-property("direction", "rtl", false);
+				@include _mbm-direction-property("text-align", "left", false);
+
+				& > .#{$mbm-objs-grid-cell-var} {
+					@include _mbm-direction-property("direction", "ltr", false);
+					@include _mbm-direction-property(
+						"text-align",
+						"left",
+						false
+					);
+				}
+			}
+		}
+	}
+}

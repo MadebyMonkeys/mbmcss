@@ -1,0 +1,103 @@
+// Options
+
+$mbm-utils-display: true;
+
+$mbm-utils-display-namespace: "" !default;
+$mbm-utils-display-name-flex: "flex" !default;
+$mbm-utils-display-name-block: "block" !default;
+$mbm-utils-display-name-hidden: "hidden" !default;
+$mbm-utils-display-name-inline: "inline" !default;
+$mbm-utils-display-name-inline-block: "inline-block" !default;
+$mbm-utils-display-name-visually-hidden: "visually-hidden" !default;
+
+$mbm-utils-display-res: false !default;
+$mbm-utils-display-breakpoints: $mbm-global-breakpoints !default;
+
+// Display Utilities namespace variable(s)
+$mbm-utils-display-var: $mbm-global-utilities-namespace +
+    $mbm-utils-display-namespace;
+
+// Display Utilities
+.#{$mbm-utils-display-var + $mbm-utils-display-name-flex} {
+    display: flex !important;
+}
+
+.#{$mbm-utils-display-var + $mbm-utils-display-name-block} {
+    display: block !important;
+}
+
+.#{$mbm-utils-display-var + $mbm-utils-display-name-hidden} {
+    display: none !important;
+}
+
+.#{$mbm-utils-display-var + $mbm-utils-display-name-inline} {
+    display: inline !important;
+}
+
+.#{$mbm-utils-display-var + $mbm-utils-display-name-inline-block} {
+    display: inline-block !important;
+}
+
+.#{$mbm-utils-display-var + $mbm-utils-display-name-visually-hidden} {
+    clip: rect(1px 1px 1px 1px) !important; /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    width: 1px !important;
+}
+
+// Display Responsive Utilities
+
+@if ($mbm-utils-display-res == true) {
+    @each $breakpoint-name, $breakpoint-size in $mbm-utils-display-breakpoints {
+        @media #{$breakpoint-size} {
+            .#{$mbm-utils-display-var
+                + $mbm-utils-display-name-flex
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                display: flex !important;
+            }
+
+            .#{$mbm-utils-display-var
+                + $mbm-utils-display-name-block
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                display: block !important;
+            }
+
+            .#{$mbm-utils-display-var
+                + $mbm-utils-display-name-hidden
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                display: none !important;
+            }
+
+            .#{$mbm-utils-display-var
+                + $mbm-utils-display-name-inline
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                display: inline !important;
+            }
+
+            .#{$mbm-utils-display-var
+                + $mbm-utils-display-name-inline-block
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                display: inline-block !important;
+            }
+
+            .#{$mbm-utils-display-var
+                + $mbm-utils-display-name-visually-hidden
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                clip: rect(1px 1px 1px 1px) !important; /* IE6, IE7 */
+                clip: rect(1px, 1px, 1px, 1px) !important;
+                height: 1px !important;
+                overflow: hidden !important;
+                position: absolute !important;
+                width: 1px !important;
+            }
+        }
+    }
+}

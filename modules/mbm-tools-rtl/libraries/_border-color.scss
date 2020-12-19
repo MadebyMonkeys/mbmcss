@@ -1,0 +1,11 @@
+@mixin mbm-border-left-color($value) {
+    @include _mbm-directional-property(border, color, null null null $value);
+}
+
+@mixin mbm-border-right-color($value) {
+    @include _mbm-directional-property(border, color, null $value null null);
+}
+
+@mixin mbm-border-color($values) {
+    @include _mbm-directional-property(border, color, $values);
+}

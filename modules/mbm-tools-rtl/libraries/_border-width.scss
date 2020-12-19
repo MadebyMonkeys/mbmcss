@@ -1,0 +1,11 @@
+@mixin mbm-border-left-width($value) {
+    @include _mbm-directional-property(border, width, null null null $value);
+}
+
+@mixin mbm-border-right-width($value) {
+    @include _mbm-directional-property(border, width, null $value null null);
+}
+
+@mixin mbm-border-width($values) {
+    @include _mbm-directional-property(border, width, $values);
+}

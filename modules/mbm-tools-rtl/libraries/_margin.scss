@@ -1,0 +1,11 @@
+@mixin mbm-margin-left($value) {
+    @include mbm-margin(null null null $value);
+}
+
+@mixin mbm-margin-right($value) {
+    @include mbm-margin(null $value null null);
+}
+
+@mixin mbm-margin($value) {
+    @include _mbm-directional-property("margin", null, $value, false);
+}

@@ -1,0 +1,71 @@
+/**
+ * Enable / Disable aligment modifiers.
+ * .o-list--middle : Align list items on middle vertically
+ * .o-list--bottom : Align list items on bottom vertically
+ *
+ * Type: Boolean
+ */
+
+$mbm-objs-list-aligned: false;
+
+/**
+  * Enable / Disable block modifier. .o-list--block : Each list
+  * item will have display block with a bottom margin.
+  *
+  * Type: Boolean
+  */
+
+$mbm-objs-list-block: false;
+
+/**
+  * Enable / Disable inline modifier. .o-list--inline Each list
+  * item will have display inline-block with a right margin.
+  *
+  * Type: Boolean
+  */
+
+$mbm-objs-list-inline: false;
+
+/**
+  * Enable / Disable span modifier. .o-list--span : Each list
+  * item will have display table-cell with a border spacing so
+  * that they never wrap to a new row.
+  *
+  * Type: Boolean
+  */
+
+$mbm-objs-list-span: false;
+
+/**
+  * Default gutter size. Use a number for a single size or
+  * a map for a responsive size.
+  *
+  * Type: Number / Map
+  */
+
+$mbm-objs-list-gutter-default: $mbm-global-gutter-default;
+
+/**
+  * Extra gutters map. Each gutter size will be available
+  * as a modifier that will be named according to the gutter
+  * name. E.g. If $mbm-objs-list-gutter-extra: ('compact': '10px');
+  * then .o-list--compact will be available for use.
+  *
+  * Type: Map
+  */
+
+$mbm-objs-list-gutter-extra: ();
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+
+$mbm-objs-list-namespace: "list";
+$mbm-objs-list-item-name: "item";
+$mbm-objs-list-name-block: "block";
+$mbm-objs-list-name-inline: "inline";
+$mbm-objs-list-name-span: "span";
+
+@import "../modules/mbm-objs-list/objects.list";

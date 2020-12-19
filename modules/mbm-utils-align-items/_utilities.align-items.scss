@@ -1,0 +1,83 @@
+// Options
+
+$mbm-utils-align-items: true;
+
+$mbm-utils-align-item-res: false !default;
+$mbm-utils-align-item-breakpoints: $mbm-global-breakpoints !default;
+
+$mbm-utils-align-item-namespace: "align-items-" !default;
+$mbm-utils-align-item-name-start: "start" !default;
+$mbm-utils-align-item-name-end: "end" !default;
+$mbm-utils-align-item-name-center: "center" !default;
+$mbm-utils-align-item-name-stretch: "stretch" !default;
+$mbm-utils-align-item-name-baseline: "baseline" !default;
+
+// Align Items Utilitie namespace variable(s)
+$mbm-utils-align-item-var: $mbm-global-utilities-namespace +
+    $mbm-utils-align-item-namespace;
+
+// Align Items Utilities
+
+.#{$mbm-utils-align-item-var + $mbm-utils-align-item-name-start} {
+    align-items: flex-start !important;
+}
+
+.#{$mbm-utils-align-item-var + $mbm-utils-align-item-name-end} {
+    align-items: flex-end !important;
+}
+
+.#{$mbm-utils-align-item-var + $mbm-utils-align-item-name-center} {
+    align-items: center !important;
+}
+
+.#{$mbm-utils-align-item-var + $mbm-utils-align-item-name-stretch} {
+    align-items: stretch !important;
+}
+
+.#{$mbm-utils-align-item-var + $mbm-utils-align-item-name-baseline} {
+    align-items: baseline !important;
+}
+
+// Align Items Responsive Utilities
+@if ($mbm-utils-align-item-res == true) {
+    @each $breakpoint-name,
+        $breakpoint-size in $mbm-utils-align-item-breakpoints
+    {
+        @media #{$breakpoint-size} {
+            .#{$mbm-utils-align-item-var
+                + $mbm-utils-align-item-name-start
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                align-items: flex-start !important;
+            }
+
+            .#{$mbm-utils-align-item-var
+                + $mbm-utils-align-item-name-end
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                align-items: flex-end !important;
+            }
+
+            .#{$mbm-utils-align-item-var
+                + $mbm-utils-align-item-name-center
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                align-items: center !important;
+            }
+
+            .#{$mbm-utils-align-item-var
+                + $mbm-utils-align-item-name-stretch
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                align-items: stretch !important;
+            }
+
+            .#{$mbm-utils-align-item-var
+                + $mbm-utils-align-item-name-baseline
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                align-items: baseline !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+/**
+ * Enables / Disables breakpoint specific classes
+ *
+ * Type: Boolean
+ */
+
+$mbm-utils-display-res: $mbm-global-res;
+
+/**
+  * Breakpoints map. Overrides the breakpoints map only
+  * for display utility.
+  *
+  * Type: Map
+  */
+
+$mbm-utils-display-breakpoints: $mbm-global-breakpoints;
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+$mbm-utils-display-namespace: "";
+$mbm-utils-display-name-flex: "flex";
+$mbm-utils-display-name-block: "block";
+$mbm-utils-display-name-hidden: "hidden";
+$mbm-utils-display-name-inline: "inline";
+$mbm-utils-display-name-inline-block: "inline-block";
+$mbm-utils-display-name-visually-hidden: "visually-hidden";
+
+@import "../modules/mbm-utils-display/utilities.display";

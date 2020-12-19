@@ -1,0 +1,81 @@
+// Options
+
+$mbm-utils-position: true;
+
+$mbm-utils-position-namespace: "" !default;
+$mbm-utils-position-name-absolute: "absolute" !default;
+$mbm-utils-position-name-fixed: "fixed" !default;
+$mbm-utils-position-name-relative: "relative" !default;
+$mbm-utils-position-name-static: "static" !default;
+$mbm-utils-position-name-sticky: "sticky" !default;
+
+$mbm-utils-position-res: false !default;
+$mbm-utils-position-breakpoints: $mbm-global-breakpoints !default;
+
+// Position Utilities namespace variable(s)
+$mbm-utils-position-var: $mbm-global-utilities-namespace +
+    $mbm-utils-position-namespace;
+
+// Position Utilities
+.#{$mbm-utils-position-var + $mbm-utils-position-name-absolute} {
+    position: absolute !important;
+}
+
+.#{$mbm-utils-position-var + $mbm-utils-position-name-fixed} {
+    position: fixed !important;
+}
+
+.#{$mbm-utils-position-var + $mbm-utils-position-name-relative} {
+    position: relative !important;
+}
+
+.#{$mbm-utils-position-var + $mbm-utils-position-name-static} {
+    position: static !important;
+}
+
+.#{$mbm-utils-position-var + $mbm-utils-position-name-sticky} {
+    position: sticky !important;
+}
+
+// Position Responsive Utilities
+@if ($mbm-utils-position-res == true) {
+    @each $breakpoint-name, $breakpoint-size in $mbm-utils-position-breakpoints
+    {
+        @media #{$breakpoint-size} {
+            .#{$mbm-utils-position-var
+                + $mbm-utils-position-name-absolute
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                position: absolute !important;
+            }
+
+            .#{$mbm-utils-position-var
+                + $mbm-utils-position-name-fixed
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                position: fixed !important;
+            }
+
+            .#{$mbm-utils-position-var
+                + $mbm-utils-position-name-relative
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                position: relative !important;
+            }
+
+            .#{$mbm-utils-position-var
+                + $mbm-utils-position-name-static
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                position: static !important;
+            }
+
+            .#{$mbm-utils-position-var
+                + $mbm-utils-position-name-sticky
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                position: sticky !important;
+            }
+        }
+    }
+}

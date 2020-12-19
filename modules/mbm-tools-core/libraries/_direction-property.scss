@@ -1,0 +1,6 @@
+@mixin _mbm-direction-property($property, $direction, $important: true) {
+    $property-value: _mbm-direction($direction) +
+        if($important, " !important", "");
+
+    #{$property}: #{$property-value};
+}

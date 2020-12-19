@@ -1,0 +1,7 @@
+@mixin _mbm-breakpoint($size, $breakpoints: $mbm-global-breakpoints) {
+    $breakpoint: map-get($breakpoints, $size);
+
+    @media #{$breakpoint} {
+        @content;
+    }
+}

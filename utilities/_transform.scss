@@ -1,0 +1,29 @@
+/**
+ * Enables / Disables breakpoint specific classes
+ *
+ * Type: Boolean
+ */
+
+$mbm-utils-transform-res: $mbm-global-res;
+
+/**
+  * Breakpoints map. Overrides the breakpoints map only
+  * for margin utility.
+  *
+  * Type: Map
+  */
+
+$mbm-utils-transform-breakpoints: $mbm-global-breakpoints;
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+
+$mbm-utils-transform-namespace: "";
+$mbm-utils-transform-name-capitalize: "capitalize";
+$mbm-utils-transform-name-uppercase: "uppercase";
+$mbm-utils-transform-name-lowercase: "lowercase";
+
+@import "../modules/mbm-utils-transform/utilities.transform";

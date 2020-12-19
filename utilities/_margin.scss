@@ -1,0 +1,49 @@
+/**
+ * Margin default gutter. Use a number for a simple size
+ * and a map for responsive.
+ *
+ * Type: Number / Map
+ */
+
+$mbm-utils-margin-default: $mbm-global-gutter-default;
+
+/**
+  * Margin extra gutters.
+  *
+  * Type: Map
+  */
+
+$mbm-utils-margin-extra: ();
+
+/**
+  * Enables / Disables responsive classes
+  *
+  * Type: Boolean
+  */
+
+$mbm-utils-margin-res: $mbm-global-res;
+
+/**
+  * Breakpoints map. Overrides the breakpoints map only
+  * for margin utility.
+  *
+  * Type: Map
+  */
+
+$mbm-utils-margin-breakpoints: $mbm-global-breakpoints;
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+
+$mbm-utils-margin-namespace: "m";
+$mbm-utils-margin-name-top: "t";
+$mbm-utils-margin-name-right: "r";
+$mbm-utils-margin-name-bottom: "b";
+$mbm-utils-margin-name-left: "l";
+$mbm-utils-margin-name-vertical: "v";
+$mbm-utils-margin-name-horizontal: "h";
+
+@import "../modules/mbm-utils-margin/utilities.margin";

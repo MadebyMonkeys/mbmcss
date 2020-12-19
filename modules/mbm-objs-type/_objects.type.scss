@@ -1,0 +1,21 @@
+// Options
+
+$mbm-objs-type: true;
+
+$mbm-objs-type-namespace: "type-" !default;
+
+$mbm-objs-type-sizes: () !default;
+$mbm-objs-type-breakpoints: $mbm-global-breakpoints !default;
+
+// Type Objects namespace variable(s)
+$mbm-objs-type-var: $mbm-global-objects-namespace + $mbm-objs-type-namespace;
+
+// Type Object Sizes
+@each $type-name, $type-size in $mbm-objs-type-sizes {
+    .#{$mbm-objs-type-var + $type-name} {
+        @include _mbm-generate-type-sizes(
+            $type-size,
+            $mbm-objs-type-breakpoints
+        );
+    }
+}

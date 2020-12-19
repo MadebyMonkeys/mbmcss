@@ -1,0 +1,19 @@
+// Options
+
+$mbm-utils-opacity: true;
+
+$mbm-utils-opacity-namespace: "opacity-" !default;
+
+$mbm-utils-opacity-sizes: () !default;
+
+// Opacity Utilities namespace variable(s)
+$mbm-utils-opacity-var: $mbm-global-utilities-namespace +
+    $mbm-utils-opacity-namespace;
+
+// Opacity Utilities
+
+@each $opacity-name, $opacity-value in $mbm-utils-opacity-sizes {
+    .#{$mbm-utils-opacity-var + $opacity-name} {
+        opacity: #{$opacity-value} !important;
+    }
+}

@@ -1,0 +1,17 @@
+// Options
+
+$mbm-utils-clearfix: true;
+
+$mbm-utils-clearfix-namespace: "clearfix" !default;
+
+// Clearfix Utilitie namespace variable(s)
+$mbm-utils-clearfix-var: $mbm-global-utilities-namespace +
+    $mbm-utils-clearfix-namespace;
+
+// Clearfix Utility
+.#{$mbm-utils-clearfix-var}:after,
+%#{$mbm-utils-clearfix-var}:after {
+    content: "";
+    display: table;
+    clear: both;
+}

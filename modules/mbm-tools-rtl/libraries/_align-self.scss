@@ -1,0 +1,3 @@
+@mixin mbm-align-self($value) {
+    @include _mbm-direction-property(align-self, $value, false);
+}

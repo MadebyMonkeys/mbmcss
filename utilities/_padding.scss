@@ -1,0 +1,49 @@
+/**
+ * Padding default gutter. Use a number for a simple size
+ * and a map for responsive.
+ *
+ * Type: Number / Map
+ */
+
+$mbm-utils-padding-default: $mbm-global-gutter-default;
+
+/**
+  * Padding extra gutters.
+  *
+  * Type: Map
+  */
+
+$mbm-utils-padding-extra: ();
+
+/**
+  * Enables / Disables responsive classes
+  *
+  * Type: Boolean
+  */
+
+$mbm-utils-padding-res: $mbm-global-res;
+
+/**
+  * Breakpoints map. Overrides the breakpoints map only
+  * for padding utility.
+  *
+  * Type: Map
+  */
+
+$mbm-utils-padding-breakpoints: $mbm-global-breakpoints;
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+
+$mbm-utils-padding-namespace: "p" !default;
+$mbm-utils-padding-name-top: "t" !default;
+$mbm-utils-padding-name-right: "r" !default;
+$mbm-utils-padding-name-bottom: "b" !default;
+$mbm-utils-padding-name-left: "l" !default;
+$mbm-utils-padding-name-vertical: "v" !default;
+$mbm-utils-padding-name-horizontal: "h" !default;
+
+@import "../modules/mbm-utils-padding/utilities.padding";

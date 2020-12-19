@@ -1,0 +1,15 @@
+@function _mbm-negative-unit($values) {
+    @if _mbm-is-map($values) {
+        @each $key, $value in $values {
+            $values: map-merge(
+                $values,
+                (
+                    $key: -$value,
+                )
+            );
+        }
+        @return $values;
+    } @else {
+        @return -$values;
+    }
+}

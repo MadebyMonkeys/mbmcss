@@ -1,0 +1,68 @@
+// Options
+
+$mbm-utils-align: true;
+
+$mbm-utils-align-namespace: "align-" !default;
+$mbm-utils-align-name-top: "top" !default;
+$mbm-utils-align-name-bottom: "bottom" !default;
+$mbm-utils-align-name-middle: "middle" !default;
+$mbm-utils-align-name-baseline: "baseline" !default;
+
+$mbm-utils-align-res: false !default;
+$mbm-utils-align-breakpoints: $mbm-global-breakpoints !default;
+
+// Align Utilitie namespace variable(s)
+$mbm-utils-align-var: $mbm-global-utilities-namespace +
+    $mbm-utils-align-namespace;
+
+// Align Utilities
+.#{$mbm-utils-align-var + $mbm-utils-align-name-top} {
+    vertical-align: top !important;
+}
+
+.#{$mbm-utils-align-var + $mbm-utils-align-name-bottom} {
+    vertical-align: bottom !important;
+}
+
+.#{$mbm-utils-align-var + $mbm-utils-align-name-middle} {
+    vertical-align: middle !important;
+}
+
+.#{$mbm-utils-align-var + $mbm-utils-align-name-baseline} {
+    vertical-align: baseline !important;
+}
+
+// Align Responsive Utilities
+@if ($mbm-utils-align-res == true) {
+    @each $breakpoint-name, $breakpoint-size in $mbm-utils-align-breakpoints {
+        @media #{$breakpoint-size} {
+            .#{$mbm-utils-align-var
+                + $mbm-utils-align-name-top
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                vertical-align: top !important;
+            }
+
+            .#{$mbm-utils-align-var
+                + $mbm-utils-align-name-bottom
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                vertical-align: bottom !important;
+            }
+
+            .#{$mbm-utils-align-var
+                + $mbm-utils-align-name-middle
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                vertical-align: middle !important;
+            }
+
+            .#{$mbm-utils-align-var
+                + $mbm-utils-align-name-baseline
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                vertical-align: baseline !important;
+            }
+        }
+    }
+}

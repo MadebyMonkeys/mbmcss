@@ -1,0 +1,33 @@
+// Options
+
+$mbm-utils-margin: true;
+
+$mbm-utils-margin-namespace: "m" !default;
+$mbm-utils-margin-name-top: "t" !default;
+$mbm-utils-margin-name-right: "r" !default;
+$mbm-utils-margin-name-bottom: "b" !default;
+$mbm-utils-margin-name-left: "l" !default;
+$mbm-utils-margin-name-vertical: "v" !default;
+$mbm-utils-margin-name-horizontal: "h" !default;
+
+$mbm-utils-margin-default: $mbm-global-gutter-default !default;
+$mbm-utils-margin-extra: () !default;
+
+$mbm-utils-margin-res: false !default;
+$mbm-utils-margin-breakpoints: $mbm-global-breakpoints !default;
+
+// Margin Utilities
+@include _mbm-generate-spacing(
+    margin,
+    $mbm-utils-margin-default,
+    $mbm-utils-margin-extra,
+    $mbm-utils-margin-namespace,
+    $mbm-utils-margin-name-top,
+    $mbm-utils-margin-name-right,
+    $mbm-utils-margin-name-bottom,
+    $mbm-utils-margin-name-left,
+    $mbm-utils-margin-name-vertical,
+    $mbm-utils-margin-name-horizontal,
+    $mbm-utils-margin-res,
+    $mbm-utils-margin-breakpoints
+);

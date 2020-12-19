@@ -1,0 +1,40 @@
+// Modular Scale Tool
+
+// Options
+
+$mbm-tools-ms-base: 15px !default;
+$mbm-tools-ms-ratio: 1.5 !default;
+$mbm-tools-ms-scale: 3 !default;
+
+// Helper functions
+
+@function _mbm-decimal-round($number, $digits: $mbm-tools-ms-scale) {
+    $num: 1;
+
+    @for $i from 1 through $digits {
+        $num: $num * 10;
+    }
+
+    @return round($number * $num) / $num;
+}
+
+@function mbm-ms(
+    $increment,
+    $base: $mbm-tools-ms-base,
+    $ratio: $mbm-tools-ms-ratio,
+    $scale: $mbm-tools-ms-scale
+) {
+    @if $increment > 0 {
+        @for $i from 1 through $increment {
+            $base: $base * $ratio;
+        }
+    }
+
+    @if $increment < 0 {
+        @for $i from -1 through $increment {
+            $base: $base / $ratio;
+        }
+    }
+
+    @return _mbm-decimal-round($base, $scale);
+}

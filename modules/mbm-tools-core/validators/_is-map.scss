@@ -1,0 +1,3 @@
+@function _mbm-is-map($map) {
+    @return type-of($map) == "map";
+}

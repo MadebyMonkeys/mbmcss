@@ -1,0 +1,27 @@
+/**
+ * Enables / Disables breakpoint specific classes
+ *
+ * Type: Boolean
+ */
+
+$mbm-utils-float-res: $mbm-global-res;
+
+/**
+  * Breakpoints map. Overrides the breakpoints map only
+  * for float utility.
+  *
+  * Type: Map
+  */
+
+$mbm-utils-float-breakpoints: $mbm-global-breakpoints;
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+$mbm-utils-float-namespace: "float-" !default;
+$mbm-utils-float-name-left: "left" !default;
+$mbm-utils-float-name-right: "right" !default;
+
+@import "../modules/mbm-utils-float/utilities.float";

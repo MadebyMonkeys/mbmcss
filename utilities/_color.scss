@@ -1,0 +1,17 @@
+/**
+ * Color names
+ *
+ * Type: Map
+ */
+
+$mbm-utils-color-names: ();
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+
+$mbm-utils-color-namespace: "color-";
+
+@import "../modules/mbm-utils-color/utilities.color";

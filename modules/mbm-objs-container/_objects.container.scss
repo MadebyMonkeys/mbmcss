@@ -1,0 +1,53 @@
+// Options
+
+$mbm-objs-container: true;
+
+// Container namespace
+$mbm-objs-container-namespace: "container" !default;
+
+$mbm-objs-container-gutter-default: $mbm-global-gutter-default !default;
+$mbm-objs-container-gutter-extra: () !default;
+
+$mbm-objs-container-size-default: 1200px;
+$mbm-objs-container-size-extra: () !default;
+
+// Container Object namespace variables
+$mbm-objs-container-var: $mbm-global-objects-namespace +
+    $mbm-objs-container-namespace;
+$mbm-objs-container-mod-var: $mbm-objs-container-var + "--";
+
+// Container Object
+.#{$mbm-objs-container-var} {
+    margin-left: auto;
+    margin-right: auto;
+    @include _mbm-generate-unit(
+        "padding",
+        "right",
+        $mbm-objs-container-gutter-default
+    );
+    @include _mbm-generate-unit(
+        "padding",
+        "left",
+        $mbm-objs-container-gutter-default
+    );
+    @include _mbm-generate-unit(
+        "max",
+        "width",
+        $mbm-objs-container-size-default
+    );
+}
+
+// Container Object Extra Gutters
+@each $gutter-name, $gutter-size in $mbm-objs-container-gutter-extra {
+    .#{$mbm-objs-container-var + quote($gutter-name)} {
+        @include _mbm-generate-unit("padding", "right", $gutter-size);
+        @include _mbm-generate-unit("padding", "left", $gutter-size);
+    }
+}
+
+// Container Object Extra Sizes
+@each $size-name, $size-value in $mbm-objs-container-size-extra {
+    .#{$mbm-objs-container-mod-var + quote($size-name)} {
+        @include _mbm-generate-unit("max-width", null, $size-value);
+    }
+}

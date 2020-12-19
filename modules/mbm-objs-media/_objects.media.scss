@@ -1,0 +1,241 @@
+// Options
+
+$mbm-objs-media: true;
+
+$mbm-objs-media-rev: false !default;
+$mbm-objs-media-aligned: false !default;
+$mbm-objs-media-res: false !default;
+
+$mbm-objs-media-flex: $mbm-global-flex !default;
+
+$mbm-objs-media-namespace: "media" !default;
+$mbm-objs-media-name-gutter: "gutter" !default;
+$mbm-objs-media-name-fixed: "fixed" !default;
+$mbm-objs-media-name-fluid: "fluid" !default;
+$mbm-objs-media-name-reversed: "rev" !default;
+$mbm-objs-media-name-responsive: "res" !default;
+
+$mbm-objs-media-align-name-middle: "middle" !default;
+$mbm-objs-media-algin-name-bottom: "bottom" !default;
+
+$mbm-objs-media-collapse-at: 767px !default;
+
+$mbm-objs-media-gutter-default: $mbm-global-gutter-default !default;
+$mbm-objs-media-gutter-extra: () !default;
+
+// Media Object namespace variable(s)
+$mbm-objs-media-var: $mbm-global-objects-namespace + $mbm-objs-media-namespace;
+$mbm-objs-media-var-mod: $mbm-objs-media-var + "--";
+
+$mbm-objs-media-fixed-var: $mbm-objs-media-var + "__" +
+	$mbm-objs-media-name-fixed;
+$mbm-objs-media-fluid-var: $mbm-objs-media-var + "__" +
+	$mbm-objs-media-name-fluid;
+
+// Flex Media Object
+
+@if ($mbm-objs-media-flex == true) {
+	.#{$mbm-objs-media-var} {
+		display: flex;
+		align-items: flex-start;
+
+		& > .#{$mbm-objs-media-fixed-var} {
+			@include _mbm-generate-unit(
+				"padding",
+				"right",
+				$mbm-objs-media-gutter-default
+			);
+		}
+
+		& > .#{$mbm-objs-media-fluid-var} {
+			flex: 1;
+		}
+	}
+
+	// Flex Media Object Reversed
+
+	@if ($mbm-objs-media-rev == true) {
+		.#{$mbm-objs-media-var-mod + $mbm-objs-media-name-reversed} {
+			& > .#{$mbm-objs-media-fixed-var} {
+				@include _mbm-generate-unit("padding", "right", 0);
+				@include _mbm-generate-unit(
+					"padding",
+					"left",
+					$mbm-objs-media-gutter-default
+				);
+				order: 1;
+			}
+		}
+	}
+
+	// Media Object Aligned
+	@if ($mbm-objs-media-aligned == true) {
+		.#{$mbm-objs-media-var-mod + $mbm-objs-media-align-name-middle} {
+			align-items: center;
+		}
+
+		.#{$mbm-objs-media-var-mod + $mbm-objs-media-algin-name-bottom} {
+			align-items: flex-end;
+		}
+	}
+} @else {
+	.#{$mbm-objs-media-var} {
+		display: table;
+		width: 100%;
+
+		& > .#{$mbm-objs-media-fixed-var},
+		& > .#{$mbm-objs-media-fluid-var} {
+			display: table-cell;
+			vertical-align: top;
+		}
+
+		& > .#{$mbm-objs-media-fixed-var} {
+			width: 1px;
+			@include _mbm-generate-unit(
+				"padding",
+				"right",
+				$mbm-objs-media-gutter-default
+			);
+
+			> img {
+				max-width: none;
+			}
+		}
+
+		& > .#{$mbm-objs-media-fluid-var} {
+			width: auto;
+
+			&,
+			> :last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// Media Object Reversed
+
+	@if ($mbm-objs-media-rev == true) {
+		.#{$mbm-objs-media-var-mod + $mbm-objs-media-name-reversed} {
+			@include _mbm-direction-property("direction", "rtl", false);
+
+			& > .#{$mbm-objs-media-fixed-var},
+			& > .#{$mbm-objs-media-fluid-var} {
+				@include _mbm-generate-unit("direction", "ltr", false);
+			}
+
+			& > .#{$mbm-objs-media-fixed-var} {
+				@include _mbm-generate-unit("padding", "right", 0);
+				@include _mbm-generate-unit(
+					"padding",
+					"left",
+					$mbm-objs-media-gutter-default
+				);
+			}
+		}
+	}
+
+	@if ($mbm-objs-media-aligned == true) {
+		.#{$mbm-objs-media-var-mod + $mbm-objs-media-align-name-middle} {
+			& > .#{$mbm-objs-media-fixed-var},
+			& > .#{$mbm-objs-media-fluid-var} {
+				vertical-align: middle;
+			}
+		}
+
+		.#{$mbm-objs-media-var-mod + $mbm-objs-media-align-name-bottom} {
+			& > .#{$mbm-objs-media-fixed-var},
+			& > .#{$mbm-objs-media-fluid-var} {
+				vertical-align: bottom;
+			}
+		}
+	}
+}
+
+// Media Object Responsive
+
+@if ($mbm-objs-media-res == true) {
+	@media screen and (max-width: $mbm-objs-media-collapse-at) {
+		.#{$mbm-objs-media-var-mod + $mbm-objs-media-name-responsive} {
+			display: block;
+
+			& > .#{$mbm-objs-media-fixed-var},
+			& > .#{$mbm-objs-media-fluid-var} {
+				display: block;
+				width: 100%;
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			& > .#{$mbm-objs-media-fixed-var} {
+				@include _mbm-generate-unit(
+					"margin",
+					"bottom",
+					$mbm-objs-media-gutter-default
+				);
+			}
+		}
+	}
+}
+
+@each $gutter-name, $gutter-size in $mbm-objs-media-gutter-extra {
+	.#{$mbm-objs-media-var-mod + $mbm-objs-media-name-gutter + $gutter-name} {
+		& > .#{$mbm-objs-media-fixed-var} {
+			@include _mbm-generate-unit("padding", "right", $gutter-size);
+		}
+
+		// Media Object Responsive
+
+		@if ($mbm-objs-media-res == true) {
+			@media screen and (max-width: $mbm-objs-media-collapse-at) {
+				&.#{$mbm-objs-media-var-mod + $mbm-objs-media-name-responsive} {
+					display: block;
+
+					& > .#{$mbm-objs-media-fixed-var} {
+						padding-right: 0;
+						padding-left: 0;
+						@include _mbm-generate-unit(
+							"margin",
+							"bottom",
+							$gutter-size
+						);
+					}
+				}
+			}
+		}
+
+		// Media Object Reversed
+
+		@if ($mbm-objs-media-rev == true) {
+			// Media Object Reversed with Extra Sizes
+
+			&.#{$mbm-objs-media-var-mod + $mbm-objs-media-name-reversed} {
+				@media screen and (min-width: ($mbm-objs-media-collapse-at + 1)) {
+					@include _mbm-generate-unit("padding", "right", 0);
+					@include _mbm-generate-unit(
+						"padding",
+						"left",
+						$gutter-size
+					);
+				}
+			}
+
+			&.#{$mbm-objs-media-var-mod
+				+ $mbm-objs-media-name-reversed
+				+ ":not(."
+				+ $mbm-objs-media-var-mod
+				+ $mbm-objs-media-name-responsive
+				+ ")"} {
+				@media screen and (max-width: $mbm-objs-media-collapse-at) {
+					& > .#{$mbm-objs-media-fixed-var} {
+						@include _mbm-generate-unit("padding", "right", 0);
+						@include _mbm-generate-unit(
+							"padding",
+							"left",
+							$gutter-size
+						);
+					}
+				}
+			}
+		}
+	}
+}

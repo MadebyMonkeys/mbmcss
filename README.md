@@ -1,2 +1,3 @@
 # mbmcss
-SASS based OCSS framework built for scaling
+
+A scalable and maintainable design agnostic framework built with SASS

@@ -1,0 +1,30 @@
+/**
+ * Enable / Disable breakpoint specific classes
+ * 
+ * Type: Boolean
+ */
+
+$mbm-utils-position-res: $mbm-global-res;
+
+/**
+  * Overrides breakpoints map only for position utility
+  *
+  * Type: Map
+  */
+
+$mbm-utils-position-breakpoints: $mbm-global-breakpoints;
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+
+$mbm-utils-position-namespace: "";
+$mbm-utils-position-name-absolute: "absolute";
+$mbm-utils-position-name-fixed: "fixed";
+$mbm-utils-position-name-relative: "relative";
+$mbm-utils-position-name-static: "static";
+$mbm-utils-position-name-sticky: "sticky";
+
+@import "../modules/mbm-utils-position/utilities.position";

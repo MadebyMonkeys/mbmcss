@@ -1,0 +1,3 @@
+@mixin mbm-float($value) {
+    @include _mbm-direction-property(float, $value, false);
+}

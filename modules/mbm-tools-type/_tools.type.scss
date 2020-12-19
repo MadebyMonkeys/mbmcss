@@ -1,0 +1,5 @@
+// Type Tool
+
+@mixin mbm-type($value, $breakpoints: $mbm-global-breakpoints) {
+    @include _mbm-generate-type-sizes($value, $breakpoints);
+}

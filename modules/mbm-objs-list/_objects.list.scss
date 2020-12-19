@@ -1,0 +1,140 @@
+// Options
+
+$mbm-objs-list: true;
+
+$mbm-objs-list-block: false !default;
+$mbm-objs-list-inline: false !default;
+$mbm-objs-list-span: false !default;
+$mbm-objs-list-aligned: false !default;
+
+$mbm-objs-list-namespace: "list" !default;
+$mbm-objs-list-item-name: "item" !default;
+
+$mbm-objs-list-name-block: "block" !default;
+$mbm-objs-list-name-inline: "inline" !default;
+$mbm-objs-list-name-span: "span" !default;
+
+$mbm-objs-list-align-name-middle: "middle" !default;
+$mbm-objs-list-align-name-bottom: "bottom" !default;
+
+$mbm-objs-list-gutter-default: $mbm-global-gutter-default !default;
+$mbm-objs-list-gutter-extra: () !default;
+
+// List Objects namespace variable(s)
+$mbm-objs-list-var: $mbm-global-objects-namespace + $mbm-objs-list-namespace;
+$mbm-objs-list-var-mod: $mbm-objs-list-var + "--";
+
+$mbm-objs-list-item-var: $mbm-objs-list-var + "__" + $mbm-objs-list-item-name;
+
+// List Object Core
+.#{$mbm-objs-list-var} {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & > .#{$mbm-objs-list-item-var} {
+        vertical-align: top;
+    }
+}
+
+// List Object Block
+@if ($mbm-objs-list-block == true) {
+    .#{$mbm-objs-list-var-mod + $mbm-objs-list-name-block} {
+        & > .#{$mbm-objs-list-item-var} {
+            display: block;
+        }
+
+        & > .#{$mbm-objs-list-item-var}:not(:last-child) {
+            @include _mbm-generate-unit(
+                "margin",
+                "bottom",
+                $mbm-objs-list-gutter-default
+            );
+        }
+    }
+}
+
+// List Object Inline
+@if ($mbm-objs-list-inline == true) {
+    .#{$mbm-objs-list-var-mod + $mbm-objs-list-name-inline} {
+        & > .#{$mbm-objs-list-item-var} {
+            display: inline-block;
+        }
+
+        & > .#{$mbm-objs-list-item-var}:not(:last-child) {
+            @include _mbm-generate-unit(
+                "margin",
+                "right",
+                $mbm-objs-list-gutter-default
+            );
+        }
+    }
+}
+
+// List Object Span
+@if ($mbm-objs-list-span == true) {
+    .#{$mbm-objs-list-var-mod + $mbm-objs-list-name-span} {
+        display: table;
+        width: 100%;
+        @include _mbm-generate-unit(
+            "border",
+            "spacing",
+            $mbm-objs-list-gutter-default
+        );
+        table-layout: fixed;
+
+        & > .#{$mbm-objs-list-item-var} {
+            display: table-cell;
+            text-align: center;
+        }
+    }
+}
+
+// List Object Alignment
+@if ($mbm-objs-list-aligned == true) {
+    .#{$mbm-objs-list-var-mod + $mbm-objs-list-align-name-middle} {
+        & > .#{$mbm-objs-list-item-var} {
+            vertical-align: middle;
+        }
+
+        & > .#{$mbm-objs-list-item-var + $mbm-objs-list-align-name-bottom} {
+            vertical-align: bottom;
+        }
+    }
+}
+
+// List Object with extra gutters
+
+@each $gutter-name, $gutter-size in $mbm-objs-list-gutter-extra {
+    .#{$mbm-objs-list-var-mod + $gutter-name} {
+        @if ($mbm-objs-list-block == true) {
+            &.#{$mbm-objs-list-var-mod + $mbm-objs-list-name-block} {
+                & > .#{$mbm-objs-list-item}:not(:last-child) {
+                    @include _mbm-generate-unit(
+                        "margin",
+                        "bottom",
+                        $gutter-size
+                    );
+                }
+            }
+        }
+
+        @if ($mbm-objs-list-inline == true) {
+            &.#{$mbm-objs-list-var-mod + $mbm-objs-list-name-inline} {
+                & > .#{$mbm-objs-list-item}:not(:last-child) {
+                    @include _mbm-generate-unit(
+                        "margin",
+                        "right",
+                        $gutter-size
+                    );
+                }
+            }
+        }
+
+        @if ($mbm-objs-list-span == true) {
+            &.#{$mbm-objs-list-var-mod + $mbm-objs-list-name-span} {
+                @include _mbm-generate-unit("border", "spacing", $gutter-size);
+            }
+        }
+    }
+}

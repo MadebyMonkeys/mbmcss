@@ -1,0 +1,58 @@
+// Options
+
+$mbm-utils-text: true;
+
+$mbm-utils-text-namespace: "text-" !default;
+$mbm-utils-text-name-left: "left" !default;
+$mbm-utils-text-name-right: "right" !default;
+$mbm-utils-text-name-center: "center" !default;
+
+$mbm-utils-text-res: false !default;
+$mbm-utils-text-breakpoints: $mbm-global-breakpoints !default;
+
+// Helper Local Utilities
+
+$mbm-utils-text-var: $mbm-global-utilities-namespace + $mbm-utils-text-namespace;
+
+// Text Utilities
+
+.#{$mbm-utils-text-var + $mbm-utils-text-name-left} {
+    @include _mbm-direction-property("text-align", "left");
+}
+
+.#{$mbm-utils-text-var + $mbm-utils-text-name-right} {
+    @include _mbm-direction-property("text-align", "right");
+}
+
+.#{$mbm-utils-text-var + $mbm-utils-text-name-center} {
+    text-align: center !important;
+}
+
+// Text Responsive Utilities
+
+@if ($mbm-utils-text-res == true) {
+    @each $breakpoint-name, $breakpoint-size in $mbm-utils-text-breakpoints {
+        @media #{$breakpoint-size} {
+            .#{$mbm-utils-text-var
+                + $mbm-utils-text-name-left
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                @include _mbm-direction-property("text-align", "left");
+            }
+
+            .#{$mbm-utils-text-var
+                + $mbm-utils-text-name-right
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                @include _mbm-direction-property("text-align", "right");
+            }
+
+            .#{$mbm-utils-text-var
+                + $mbm-utils-text-name-center
+                + $mbm-global-breakpoint-separator
+                + $breakpoint-name} {
+                text-align: center !important;
+            }
+        }
+    }
+}

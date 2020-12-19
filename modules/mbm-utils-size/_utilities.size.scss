@@ -1,0 +1,50 @@
+// Size Utility
+
+$mbm-utils-size: true;
+
+$mbm-utils-size-namespace: "" !default;
+
+$mbm-utils-size-columns: $mbm-global-columns !default;
+
+$mbm-utils-size-delimiter: $mbm-global-delimiter !default;
+
+$mbm-utils-size-res: false !default;
+$mbm-utils-size-breakpoints: $mbm-global-breakpoints !default;
+
+// Helper Local Variables
+
+$mbm-utils-size-var: $mbm-global-utilities-namespace + $mbm-utils-size-namespace;
+
+// Size Utilities
+
+@each $column-size in $mbm-utils-size-columns {
+    @for $i from 1 through $column-size {
+        .#{$mbm-utils-size-var
+            + $i
+            + $mbm-utils-size-delimiter
+            + $column-size} {
+            width: ((100 / $column-size) * $i) * 1% !important;
+        }
+    }
+}
+
+// Responsive Size Utilities
+
+@if ($mbm-utils-size-res == true) {
+    @each $breakpoint-name, $breakpoint-size in $mbm-utils-size-breakpoints {
+        @media #{$breakpoint-size} {
+            @each $column-size in $mbm-utils-size-columns {
+                @for $i from 1 through $column-size {
+                    .#{$mbm-utils-size-var
+                        + $i
+                        + $mbm-utils-size-delimiter
+                        + $column-size
+                        + $mbm-global-breakpoint-separator
+                        + $breakpoint-name} {
+                        width: ((100 / $column-size) * $i) * 1% !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+/**
+ * Enable / Disable breakpoint specific classes
+ *
+ * Type: Boolean
+ */
+
+$mbm-utils-justify-content-res: $mbm-global-res;
+
+/**
+  * Override breakpoints map only for align utility
+  *
+  * Type: Type: Map
+  */
+
+$mbm-utils-justify-content-breakpoints: $mbm-global-breakpoints;
+
+/**
+  * Namespace classes
+  *
+  * Type: String
+  */
+$mbm-utils-justify-content-namespace: "justify-content-" !default;
+$mbm-utils-justify-content-name-start: "start" !default;
+$mbm-utils-justify-content-name-end: "end" !default;
+$mbm-utils-justify-content-name-center: "center" !default;
+$mbm-utils-justify-content-name-between: "between" !default;
+$mbm-utils-justify-content-name-around: "around" !default;
+
+@import "../modules/mbm-utils-justify-content/utilities.justify-content";
