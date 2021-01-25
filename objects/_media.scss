@@ -1,81 +1,18 @@
-/**
- * Enable / Disable aligment modifiers.
- * .o-media--middle Align columns at middle vertically
- * .o-media--bottom Align columns at bottom vertically.
- *
- * Type: Boolean
- */
+$mbm-objs-media-rev: true;
+$mbm-objs-media-res: true;
 
-$mbm-objs-media-aligned: false;
-
-/**
-  * Enable / Disable reversed modifier
-  * .o-media--rev Reverse columns order
-  *
-  * Type: Boolean
-  */
-
-$mbm-objs-media-rev: false;
-
-/**
-  * Default gutter size. Use a number for a single size or
-  * a map for a responsive size.
-  *
-  * Type: Number / Map
-  */
-
-$mbm-objs-media-gutter-default: $mbm-global-gutter-default;
-
-/**
-  * Extra gutters map. Each gutter size will be available as
-  * a modifier that will be named according to the gutter name.
-  * Use a map for a single size or a nested map for a responsive
-  * size. E.g. If $mbm-objs-media-gutter-extra: ('compact': '10px');
-  * then .o-media--compact will be available for use.
-  *
-  * Type: Map
-  */
-
-$mbm-objs-media-gutter-extra: ();
-
-/**
-  * Enable / Disable flexbox
-  *
-  * Type: Boolean
-  */
-
-$mbm-objs-media-flex: $mbm-global-flex;
-
-/**
-  * Enable / Disable responsive modifier.
-  * .o-media--res Collapse fluid section bellow fixed one,
-  * at a specific max-width breakpoint.
-  *
-  * Type: Boolean
-  */
-
-$mbm-objs-media-res: false;
-
-/**
-  * Specify max-width for breakpoint to collapse at.
-  *
-  * Type: Number
-  */
+// Namespaces
+$mbm-objs-media-namespace: "media";
+$mbm-objs-media-name-gap: "-gap";
+$mbm-objs-media-name-fixed: "fixed";
+$mbm-objs-media-name-fluid: "fluid";
+$mbm-objs-media-name-responsive: "res";
+$mbm-objs-media-name-reversed: "rev";
 
 $mbm-objs-media-collapse-at: 767px;
 
-/**
-  * Namespace classes
-  *
-  * Type: String
-  */
-
-$mbm-objs-media-namespace: "media";
-$mbm-objs-media-name-fixed: "fixed";
-$mbm-objs-media-name-fluid: "fluid";
-$mbm-objs-media-name-reversed: "rev";
-$mbm-objs-media-align-name-middle: "middle";
-$mbm-objs-media-algin-name-bottom: "bottom";
-$mbm-objs-media-name-responsive: "res";
+// Options
+$mbm-objs-media-gap-default: $mbm-global-gap-default;
+$mbm-objs-media-gap-extra: $spacing-extra;
 
 @import "../modules/mbm-objs-media/objects.media";

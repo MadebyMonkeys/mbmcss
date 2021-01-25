@@ -1,0 +1,89 @@
+$mbm-comp-button: true !default;
+
+// Namespaces
+$mbm-comp-button-namespace: "button" !default;
+$mbm-comp-button-name-ghost: "-ghost" !default;
+
+// Options
+$mbm-comp-button-border-width: 2px !default;
+$mbm-comp-button-border-radius: $mbm-global-border-radius !default;
+
+$mbm-comp-button-color-default: #d1d1d1 !default;
+$mbm-comp-button-color-extra: () !default;
+
+$mbm-comp-button-spacing-vertical: $baseline !default;
+$mbm-comp-button-spacing-horizontal: $baseline-x2 !default;
+//$mbm-comp-button-spacing-extra: () !default;
+
+// Namespace Variables
+$mbm-comp-button-var: $mbm-global-components-namespace +
+	$mbm-comp-button-namespace;
+$mbm-comp-button-ghost-var: $mbm-comp-button-var + $mbm-comp-button-name-ghost;
+
+$mbm-comp-button-mod-var: $mbm-comp-button-var + "--";
+
+//
+//
+//
+
+// Core
+.#{$mbm-comp-button-var} {
+	background-color: $mbm-comp-button-color-default;
+	color: _mbm-dynamic-text-color($mbm-comp-button-color-default);
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	margin: 0;
+	padding: $mbm-comp-button-spacing-vertical
+		$mbm-comp-button-spacing-horizontal;
+	border-color: transparent;
+	border-radius: $mbm-comp-button-border-radius;
+	text-decoration: none;
+	transition: opacity 300ms ease-in-out;
+
+	&:hover,
+	&:focus {
+		opacity: 0.75;
+	}
+
+	&:active {
+		opacity: 1;
+		transform: translateY(1px);
+	}
+}
+
+// Default button color classes
+@each $color-name, $color-value in $mbm-comp-button-color-extra {
+	.#{$mbm-comp-button-mod-var + $color-name} {
+		background-color: #{$color-value};
+		color: text-color($color-value);
+
+		&:active {
+			background-color: darken($color-value, 10%);
+		}
+	}
+}
+
+// Ghost buttons
+.#{$mbm-comp-button-ghost-var} {
+	border: $mbm-comp-button-border-width solid currentColor;
+	padding: ($mbm-comp-button-spacing-vertical - $mbm-comp-button-border-width)
+		($mbm-comp-button-spacing-horizontal - $mbm-comp-button-border-width);
+	&,
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+	}
+
+	// Extra Color classes
+	@each $color-name, $color-value in $mbm-comp-button-color-extra {
+		&.#{$mbm-comp-button-mod-var + $color-name} {
+			color: #{$color-value};
+
+			&:active {
+				color: darken($color-value, 10%);
+			}
+		}
+	}
+}

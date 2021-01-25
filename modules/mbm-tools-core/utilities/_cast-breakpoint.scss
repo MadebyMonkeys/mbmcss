@@ -1,7 +1,0 @@
-@function _mbm-cast-breakpoint($breakpoint) {
-    @if ($breakpoint != "") {
-        @return #{$mbm-global-breakpoint-separator + $breakpoint};
-    }
-
-    @return $breakpoint;
-}

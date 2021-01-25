@@ -1,28 +1,11 @@
-/**
- * Enables / Disables breakpoint specific classes
- *
- * Type: Boolean
- */
+// Namespaces
+$mbm-utils-text-namespace: "text-" !default;
+$mbm-utils-text-name-left: "left" !default;
+$mbm-utils-text-name-right: "right" !default;
+$mbm-utils-text-name-center: "center" !default;
 
-$mbm-utils-text-res: $mbm-global-res;
-
-/**
-  * Overrides breakpoints map only for position utility
-  * 
-  * Type: Map
-  */
-
-$mbm-utils-text-breakpoints: $mbm-global-breakpoints;
-
-/**
-  * Namespace classes
-  *
-  * Type: String
-  */
-
-$mbm-utils-text-namespace: "text-";
-$mbm-utils-text-name-left: "left";
-$mbm-utils-text-name-right: "right";
-$mbm-utils-text-name-center: "center";
+// Options
+$mbm-utils-text-res: true !default;
+$mbm-utils-text-breakpoints: $mbm-global-breakpoints !default;
 
 @import "../modules/mbm-utils-text/utilities.text";

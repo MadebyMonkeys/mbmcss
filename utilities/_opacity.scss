@@ -1,17 +1,5 @@
-/**
- * Opacity sizes
- *
- * Type: Map
- */
-
-$mbm-utils-opacity-sizes: ();
-
-/**
-  * Namespace classes
-  *
-  * Type: String
-  */
-
-$mbm-utils-opacity-namespace: "opacity-";
+// Options
+$mbm-utils-opacity-namespace: "opacity-" !default;
+$mbm-utils-opacity-sizes: () !default;
 
 @import "../modules/mbm-utils-opacity/utilities.opacity";

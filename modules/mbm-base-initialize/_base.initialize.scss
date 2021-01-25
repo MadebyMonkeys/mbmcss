@@ -1,114 +1,109 @@
+$mbm-base-initialize: true;
+
+// Options
+$mbm-base-initialize-box-sizing: "border-box" !default;
+$mbm-base-initialize-text-rendering: "optimizedSpeed" !default;
+$mbm-base-initialize-heading-size: false !default;
+$mbm-base-initialize-paragraph-bottom-space: false !default;
+
 /**
  * A modern and minimal reset
  */
 
-$mbm-base-initialize: true;
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
 
-// Options
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: inherit;
+	margin: 0;
+}
 
-$mbm-base-initialize-box-sizing: "border-box" !default;
-$mbm-base-initialize-text-rendering: "optimizeSpeed" !default;
+button,
+input {
+	overflow: visible;
+}
 
-$mbm-base-initialize-heading-size: false !default;
+button,
+select {
+	text-transform: none;
+}
 
-// Initialize reset
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
 
-/* Box-sizing rules */
+html {
+	font-size: clamp(100%, calc(50% + 0.666vw), 150%);
+}
+
 *,
 *::before,
 *::after {
 	box-sizing: #{$mbm-base-initialize-box-sizing};
 }
 
-/* Remove default margins */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul[class],
-ol[class],
-figure,
-blockquote,
-dl,
-dd,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-	margin: 0;
-}
-
-/* Remove default padding */
-ul[class],
-ol[class] {
-	padding: 0;
-}
-
-/* Set core root defaults */
-html {
-	scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-	text-rendering: #{$mbm-base-initialize-text-rendering};
-	min-height: 100vh;
-}
-
-/* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
-	list-style: none;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-skip-ink: auto;
-}
-
-/*  Make images easier to work with */
 img {
-	max-width: 100%;
 	display: block;
 	vertical-align: middle;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-	font: inherit;
+img,
+video {
+	height: auto;
+	max-width: 100%;
 }
 
-/* Removes default border */
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-	border: none;
+iframe {
+	border: 0;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-	* {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-/**
- * Sets heading font-size to be equal to the content font-size. Encourages
- * the use of different heading elements to define the position of the heading
- * in the document and not the heading look.
- * Opinionated and disabled by default.
- */
+td,
+th {
+	padding: 0;
+}
+
+td:not([align]),
+th:not([align]) {
+	text-align: left;
+}
 
 @if ($mbm-base-initialize-heading-size == true) {
 	h1,
@@ -117,6 +112,17 @@ input[type="button"] {
 	h4,
 	h5,
 	h6 {
-		font-size: inherit;
+		font-size: 100%;
+		font-weight: inherit;
+	}
+}
+
+@if ($mbm-base-initialize-paragraph-bottom-space == true) {
+	p:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+} @else {
+	p:not(:last-of-type) {
+		margin-bottom: 1rem;
 	}
 }

@@ -1,7 +1,0 @@
-@mixin mbm-left($value) {
-    #{_mbm-direction(left)}: $value;
-}
-
-@mixin mbm-right($value) {
-    #{_mbm-direction(right)}: $value;
-}

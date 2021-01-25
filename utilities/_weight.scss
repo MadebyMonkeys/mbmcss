@@ -1,17 +1,5 @@
-/**
- * Weight sizes
- *
- * Type: Map
- */
-
-$mbm-utils-weight-sizes: ();
-
-/**
-  * Namespace classes
-  *
-  * Type: String
-  */
-
-$mbm-utils-weight-namespace: "weight-";
+// Options
+$mbm-utils-weight-namespace: "weight-" !default;
+$mbm-utils-weight-sizes: $type-weights !default;
 
 @import "../modules/mbm-utils-weight/utilities.weight";

@@ -1,48 +1,27 @@
-/* ========================================================================== */
-// Core Settings
-/* ========================================================================== */
-
-// Defines if core settings are loaded
-
 $mbm-settings-core: true;
 
-// Define the amount of columns
-
-$mbm-global-columns: 2, 3, 6 !default;
-
-// Defines the global namespaces
-
-$mbm-global-objects-namespace: "o-" !default;
-$mbm-global-utilities-namespace: "u-" !default;
-$mbm-global-components-namespace: "c-" !default;
-
-// Defines the default spacing size used globaly
-
-$mbm-global-gutter-default: 8px !default;
-
-// Enable/Disable flexbox global
-
-$mbm-global-flex: false !default;
-
-// Enable/Disable responsive classes global
-
-$mbm-global-res: false !default;
-
 // Enable/Disable rtl global
-
 $mbm-global-rtl: false !default;
 
-// Defines default breakpoints
+// Define the global namespaces
+$mbm-global-objects-namespace: "o-" !default;
+$mbm-global-components-namespace: "c-" !default;
+$mbm-global-utilities-namespace: "u-" !default;
 
+// Define the amount of columns
+$mbm-global-columns: 1, 2, 3, 6 !default;
+
+// Define the global gap spacing size
+$mbm-global-gap-default: 16px;
+
+// Defines default breakpoints
 $mbm-global-breakpoints: (
-    sm: "screen and ( min-width: 768px )",
-    md: "screen and ( min-width: 1000px )",
+	sm: "screen and ( min-width: 768px )",
+	md: "screen and ( min-width: 1000px )",
 ) !default;
 
 // Defines the default breakpoint separator
-
 $mbm-global-breakpoint-separator: \@ !default;
 
 // Defines the default delimiter for Size, Push and Pull utilities
-
 $mbm-global-delimiter: \/ !default;

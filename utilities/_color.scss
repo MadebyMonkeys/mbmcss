@@ -1,17 +1,9 @@
-/**
- * Color names
- *
- * Type: Map
- */
+$mbm-utils-color: true;
 
-$mbm-utils-color-names: ();
+// Namespaces
+$mbm-utils-color-namespace: "color-" !default;
 
-/**
-  * Namespace classes
-  *
-  * Type: String
-  */
-
-$mbm-utils-color-namespace: "color-";
+// Options
+$mbm-utils-color-names: $color-list !default;
 
 @import "../modules/mbm-utils-color/utilities.color";

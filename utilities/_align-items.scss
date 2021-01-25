@@ -1,30 +1,13 @@
-/**
- * Enable / Disable breakpoint specific classes
- *
- * Type: Boolean
- */
+// Options
+$mbm-utils-align-item-res: false !default;
+$mbm-utils-align-item-breakpoints: $mbm-global-breakpoints !default;
 
-$mbm-utils-align-items-res: $mbm-global-res;
-
-/**
-  * Override breakpoints map only for align utility
-  *
-  * Type: Type: Map
-  */
-
-$mbm-utils-align-items-breakpoints: $mbm-global-breakpoints;
-
-/**
-  * Namespace classes
-  *
-  * Type: String
-  */
-
-$mbm-utils-align-item-namespace: "align-items-";
-$mbm-utils-align-item-name-start: "start";
-$mbm-utils-align-item-name-end: "end";
-$mbm-utils-align-item-name-center: "center";
-$mbm-utils-align-item-name-stretch: "stretch";
-$mbm-utils-align-item-name-baseline: "baseline";
+// Namespaces
+$mbm-utils-align-item-namespace: "ai-" !default;
+$mbm-utils-align-item-name-start: "start" !default;
+$mbm-utils-align-item-name-end: "end" !default;
+$mbm-utils-align-item-name-center: "center" !default;
+$mbm-utils-align-item-name-stretch: "stretch" !default;
+$mbm-utils-align-item-name-baseline: "baseline" !default;
 
 @import "../modules/mbm-utils-align-items/utilities.align-items";

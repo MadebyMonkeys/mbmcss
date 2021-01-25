@@ -1,0 +1,20 @@
+// Options
+$mbm-utils-spacings-properties: (
+	"p": "padding",
+	"m": "margin",
+);
+
+$mbm-utils-spacings-directions: (
+	null: null,
+	"t": "-top",
+	"r": "-right",
+	"b": "-bottom",
+	"l": "-left",
+	"v": "-top" "-bottom",
+	"h": "-left" "-right",
+);
+
+$mbm-utils-spacings-sizes-default: $spacing-default;
+$mbm-utils-spacings-sizes-extra: $spacing-extra;
+
+@import "../modules/mbm-utils-spacing/utilities.spacing";

@@ -1,100 +1,33 @@
-/**
- * Grid columns. This setting is shared between
- * mbmCSS grid objects and size, pull & push
- * utilities. You can change it also locally to
- * each module.
- *
- * Type: Unitless Number / List
- */
+// Enable/Disable rtl global
+$mbm-global-rtl: false !default;
 
-$mbm-global-columns: 2, 3, 4, 5;
+// Define the global font weight
+$mbm-global-font-weight: 200 !default;
 
-/**
-  * Global namespace for Objects, Components and 
-  * Utilities
-  *
-  * Type: String
-  */
+// Define the global namespaces
+$mbm-global-objects-namespace: "o-" !default;
+$mbm-global-components-namespace: "c-" !default;
+$mbm-global-utilities-namespace: "u-" !default;
 
-$mbm-global-objects-namespace: "o-";
-$mbm-global-utilities-namespace: "u-";
-$mbm-global-components-namespace: "c-";
+// Define the amount of columns
+$mbm-global-columns: 1, 2, 3, 6 !default;
 
-/**
-  * Default gutters. This setting is shared between
-  * multiple objects and utilities as the default value
-  * for gutters. You can change it also locally to each
-  * module.
-  *
-  * Type: Number / List / Map
-  */
+// Define the global gap spacing size
+$mbm-global-gap-default: 16px !default;
 
-$mbm-global-gutter-default: 10px;
+// Define global border-radius
+$mbm-global-border-radius: 0.25em !default;
 
-/**
-  * Enables flexbox across the app. If you do not want
-  * all modules to use flexbox you can keep this value
-  * false and set it to true separately to each one of
-  * them locally.
-  *
-  * Type: Boolean
-  */
-
-$mbm-global-flex: false;
-
-/**
-  * Enables responsive classes across the app. 
-  * If you do not want all modules to use responsive 
-  * classes you can keep this value false and set it 
-  * to true separately to each one of them locally.
-  *
-  * Type: Boolean
-  */
-
-$mbm-global-res: true;
-
-/**
-  * Enables rtl across the app. If you enable this setting
-  * the final CSS will be converted to RTL.
-  *
-  * Type: Boolean
-  */
-
-$mbm-global-rtl: false;
-
-/**
-  * Default global breakpoints map. These are the
-  * default breakpoints map that will be shared across
-  * all mbmCSS modules. You can change it also locally
-  * to each module.
-  *
-  * Type: Map
-  */
-
+// Defines default breakpoints
 $mbm-global-breakpoints: (
-    sm: "screen and ( min-width: 768px )",
-    md: "screen and ( min-width: 1000px )",
-);
+	sm: "screen and ( min-width: 768px )",
+	md: "screen and ( min-width: 1000px )",
+) !default;
 
-/**
-  * Global breakpoint suffix naming setting. All breakpoint
-  * specific styles have a '@breakpointName' suffix by default.
-  * The \ character is used to escape the @ character.
-  *
-  * Type: String
-  */
+// Defines the default breakpoint separator
+$mbm-global-breakpoint-separator: \@ !default;
 
-$mbm-global-breakpoint-separator: \@;
-
-/**
-  * Global delimiter naming setting for Size, Push and Pull
-  * utilities. By default it is '/' (.u-1/2) and you can change
-  * it for example to 'of' so that the generated HTML class will be
-  * 'u-1of2'.
-  *
-  * Type: String
-  */
-
-$mbm-global-delimiter: \/;
+// Defines the default delimiter for Size, Push and Pull utilities
+$mbm-global-delimiter: \/ !default;
 
 @import "../modules/mbm-settings-core/settings.core";

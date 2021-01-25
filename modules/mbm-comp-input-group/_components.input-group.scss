@@ -1,0 +1,64 @@
+$mbm-comp-input-group: true;
+
+// Namespaces
+$mbm-comp-input-group-namespace: "input-group" !default;
+$mbm-comp-input-group-name-field: "field" !default;
+$mbm-comp-input-group-name-item: "item" !default;
+
+// Options
+$mbm-comp-input-group-border-color: rgba(147, 128, 108, 0.25) !default;
+$mbm-comp-input-group-spacing-default: 0.5em 0.75em !default;
+
+$mbm-comp-input-group-bgcolor-default: rgba(147, 128, 108, 0.1);
+$mbm-comp-input-group-border-default: 1px solid
+	$mbm-comp-input-group-border-color;
+
+// Namespace Variables
+$mbm-comp-input-group-var: $mbm-global-components-namespace +
+	$mbm-comp-input-group-namespace;
+$mbm-comp-input-group-element-var: $mbm-comp-input-group-var + "__";
+
+//
+// Input-group Utilities Classes
+//
+
+.#{$mbm-comp-input-group-var} {
+	display: flex;
+	margin-bottom: 1.5rem;
+}
+
+.#{$mbm-comp-input-group-element-var + $mbm-comp-input-group-name-field} {
+	flex: 1;
+
+	&:not(:first-child) {
+		border-left: 0;
+	}
+
+	&:not(:last-child) {
+		border-right: 0;
+	}
+}
+
+.#{$mbm-comp-input-group-element-var + $mbm-comp-input-group-name-item} {
+	background-color: $mbm-comp-input-group-bgcolor-default;
+	font: inherit;
+	font-weight: normal;
+}
+
+.#{$mbm-comp-input-group-element-var} {
+	&#{$mbm-comp-input-group-name-item},
+	&#{$mbm-comp-input-group-name-field} {
+		border: $mbm-comp-input-group-border-default;
+		padding: $mbm-comp-input-group-spacing-default;
+
+		&:first-child {
+			border-radius: $mbm-global-border-radius 0 0
+				$mbm-global-border-radius;
+		}
+
+		&:last-child {
+			border-radius: 0 $mbm-global-border-radius $mbm-global-border-radius
+				0;
+		}
+	}
+}

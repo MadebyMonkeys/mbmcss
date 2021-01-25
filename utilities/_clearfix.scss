@@ -1,9 +1,4 @@
-/**
- * Namespace classes
- *
- * Type: String
- */
-
-$mbm-utils-clearfix-namespace: "cf";
+// Options
+$mbm-utils-clearfix-namespace: "clearfix" !default;
 
 @import "../modules/mbm-utils-clearfix/utilities.clearfix";

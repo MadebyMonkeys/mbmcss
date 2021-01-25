@@ -1,0 +1,12 @@
+// Namespaces
+$mbm-comp-input-group-namespace: "input-group" !default;
+$mbm-comp-input-group-name-field: "field" !default;
+$mbm-comp-input-group-name-item: "item" !default;
+
+// Options
+$mbm-comp-input-group-border-color:  !default;
+
+$mbm-comp-input-group-bgcolor-default: rgba(147, 128, 108, 0.1);
+$mbm-comp-input-group-border-default: 1px solid rgba(147, 128, 108, 0.25);
+
+@import "../modules/mbm-comp-input-group/components.input-group";

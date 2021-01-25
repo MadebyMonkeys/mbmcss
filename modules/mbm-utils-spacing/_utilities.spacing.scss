@@ -1,0 +1,52 @@
+$mbm-utils-spacings: true;
+
+// Options
+$mbm-utils-spacings-properties: (
+	"p": "padding",
+	"m": "margin",
+) !default;
+
+$mbm-utils-spacings-directions: (
+	null: null,
+	"t": "-top",
+	"r": "-right",
+	"b": "-bottom",
+	"l": "-left",
+	"v": "-top" "-bottom",
+	"h": "-left" "-right",
+) !default;
+
+$mbm-utils-spacings-sizes-default: $spacing-default !default;
+$mbm-utils-spacings-sizes-extra: () !default;
+
+//
+// Padding & Margin Classes
+//
+
+// Core classes
+@each $property-namespace, $property in $mbm-utils-spacings-properties {
+	@each $direction-namespace,
+		$direction-rules in $mbm-utils-spacings-directions
+	{
+		.#{$mbm-global-utilities-namespace}#{$property-namespace}#{$direction-namespace} {
+			@each $direction in $direction-rules {
+				#{$property}#{$direction}: $mbm-utils-spacings-sizes-default !important;
+			}
+		}
+	}
+}
+
+// Extra classes
+@each $property-namespace, $property in $mbm-utils-spacings-properties {
+	@each $direction-namespace,
+		$direction-values in $mbm-utils-spacings-directions
+	{
+		@each $size-namespace, $size in $mbm-utils-spacings-sizes-extra {
+			.#{$mbm-global-utilities-namespace}#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
+				@each $direction in $direction-values {
+					#{$property}#{$direction}: $size !important;
+				}
+			}
+		}
+	}
+}

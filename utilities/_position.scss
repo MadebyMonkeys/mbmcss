@@ -1,30 +1,13 @@
-/**
- * Enable / Disable breakpoint specific classes
- * 
- * Type: Boolean
- */
+// Namespaces
+$mbm-utils-position-namespace: "" !default;
+$mbm-utils-position-name-absolute: "absolute" !default;
+$mbm-utils-position-name-fixed: "fixed" !default;
+$mbm-utils-position-name-relative: "relative" !default;
+$mbm-utils-position-name-static: "static" !default;
+$mbm-utils-position-name-sticky: "sticky" !default;
 
-$mbm-utils-position-res: $mbm-global-res;
-
-/**
-  * Overrides breakpoints map only for position utility
-  *
-  * Type: Map
-  */
-
-$mbm-utils-position-breakpoints: $mbm-global-breakpoints;
-
-/**
-  * Namespace classes
-  *
-  * Type: String
-  */
-
-$mbm-utils-position-namespace: "";
-$mbm-utils-position-name-absolute: "absolute";
-$mbm-utils-position-name-fixed: "fixed";
-$mbm-utils-position-name-relative: "relative";
-$mbm-utils-position-name-static: "static";
-$mbm-utils-position-name-sticky: "sticky";
+// Options
+$mbm-utils-position-res: false !default;
+$mbm-utils-position-breakpoints: $mbm-global-breakpoints !default;
 
 @import "../modules/mbm-utils-position/utilities.position";

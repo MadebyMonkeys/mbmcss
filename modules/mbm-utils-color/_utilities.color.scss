@@ -1,18 +1,18 @@
-// Options
-
 $mbm-utils-color: true;
 
+// Namespaces
 $mbm-utils-color-namespace: "color-" !default;
 
+// Options
 $mbm-utils-color-names: () !default;
 
 // Background Color Utilitie namespace variable(s)
 $mbm-utils-color-var: $mbm-global-utilities-namespace +
-    $mbm-utils-color-namespace;
+	$mbm-utils-color-namespace;
 
 // Background Color Utilities
 @each $color-name, $color-value in $mbm-utils-color-names {
-    .#{$mbm-utils-color-var + $color-name} {
-        color: #{$color-value} !important;
-    }
+	.#{$mbm-utils-color-var + $color-name} {
+		color: #{$color-value} !important;
+	}
 }

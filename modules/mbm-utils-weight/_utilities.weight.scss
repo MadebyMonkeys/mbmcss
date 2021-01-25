@@ -1,18 +1,16 @@
-// Options
-
 $mbm-utils-weight: true;
 
+// Options
 $mbm-utils-weight-namespace: "weight-" !default;
-
 $mbm-utils-weight-sizes: () !default;
 
 // Weight Utilties namespace variable(s)
 $mbm-utils-weight-var: $mbm-global-utilities-namespace +
-    $mbm-utils-weight-namespace;
+	$mbm-utils-weight-namespace;
 
 // Weight Utilities
 @each $weight-name, $weight-size in $mbm-utils-weight-sizes {
-    .#{$mbm-utils-weight-var + $weight-name} {
-        font-weight: #{$weight-size} !important;
-    }
+	.#{$mbm-utils-weight-var + $weight-name} {
+		font-weight: #{$weight-size} !important;
+	}
 }

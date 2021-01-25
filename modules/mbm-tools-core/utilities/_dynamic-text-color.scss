@@ -1,0 +1,8 @@
+// Dynamic font color function
+@function _mbm-dynamic-text-color($color-value) {
+	@if (lightness($color-value) > 48) {
+		@return rgba(0, 0, 0, 0.7);
+	} @else {
+		@return rgba(255, 255, 255, 1);
+	}
+}

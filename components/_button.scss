@@ -1,0 +1,15 @@
+// Namespaces
+$mbm-comp-button-namespace: "button" !default;
+$mbm-comp-button-name-ghost: "-ghost" !default;
+
+// Options
+$mbm-comp-button-border-width: 2px !default;
+$mbm-comp-button-border-radius: 0.25rem !default;
+
+$mbm-comp-button-color-default: #d1d1d1 !default;
+$mbm-comp-button-color-extra: $color-list !default;
+
+$mbm-comp-button-button-spacing-default: $baseline $baseline-x2 !default;
+$mbm-comp-button-button-spacing-extra: () !default;
+
+@import "../modules/mbm-comp-button/components.button";

@@ -1,53 +1,44 @@
-// Options
-
 $mbm-objs-container: true;
 
-// Container namespace
+// Namespaces
 $mbm-objs-container-namespace: "container" !default;
 
-$mbm-objs-container-gutter-default: $mbm-global-gutter-default !default;
-$mbm-objs-container-gutter-extra: () !default;
-
-$mbm-objs-container-size-default: 1200px;
+// Options
+$mbm-objs-container-size-default: 1200px !default;
 $mbm-objs-container-size-extra: () !default;
 
-// Container Object namespace variables
+$mbm-objs-container-gap-default: $mbm-global-gap-default !default;
+$mbm-objs-container-gap-extra: () !default;
+
+// Namespace Variables
 $mbm-objs-container-var: $mbm-global-objects-namespace +
-    $mbm-objs-container-namespace;
+	$mbm-objs-container-namespace;
 $mbm-objs-container-mod-var: $mbm-objs-container-var + "--";
 
-// Container Object
+//
+// Container Object Classes
+//
+
+// Container object core
 .#{$mbm-objs-container-var} {
-    margin-left: auto;
-    margin-right: auto;
-    @include _mbm-generate-unit(
-        "padding",
-        "right",
-        $mbm-objs-container-gutter-default
-    );
-    @include _mbm-generate-unit(
-        "padding",
-        "left",
-        $mbm-objs-container-gutter-default
-    );
-    @include _mbm-generate-unit(
-        "max",
-        "width",
-        $mbm-objs-container-size-default
-    );
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $mbm-objs-container-gap-default;
+	padding-right: $mbm-objs-container-gap-default;
+	max-width: $mbm-objs-container-size-default;
 }
 
-// Container Object Extra Gutters
-@each $gutter-name, $gutter-size in $mbm-objs-container-gutter-extra {
-    .#{$mbm-objs-container-var + quote($gutter-name)} {
-        @include _mbm-generate-unit("padding", "right", $gutter-size);
-        @include _mbm-generate-unit("padding", "left", $gutter-size);
-    }
-}
-
-// Container Object Extra Sizes
+// Extra size classes
 @each $size-name, $size-value in $mbm-objs-container-size-extra {
-    .#{$mbm-objs-container-mod-var + quote($size-name)} {
-        @include _mbm-generate-unit("max-width", null, $size-value);
-    }
+	.#{$mbm-objs-container-var + quote($size-name)} {
+		max-width: $size-value;
+	}
+}
+
+// Extra gap classes
+@each $gap-name, $gap-size in $mbm-objs-container-gap-extra {
+	.#{$mbm-objs-container-var + quote($gap-name)} {
+		padding-left: $gap-size;
+		padding-right: $gap-size;
+	}
 }

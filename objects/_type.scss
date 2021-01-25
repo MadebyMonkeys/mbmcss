@@ -1,17 +1,12 @@
-/**
- * Allows you to change the default type name from .o-type-.
- * 
- * Type: String
- */
-
 $mbm-objs-type-namespace: "type-";
 
-/**
-  * Allows you to specify typography sizes.
-  *
-  * Type: Map
-  */
-
-$mbm-objs-type-sizes: ();
+$mbm-objs-type-sizes: (
+	16: $type-16,
+	20: $type-20,
+	25: $type-25,
+	31: $type-31,
+	39: $type-39,
+	48: $type-48,
+);
 
 @import "../modules/mbm-objs-type/objects.type";

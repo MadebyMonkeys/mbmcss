@@ -1,40 +1,44 @@
-// Options
-
 $mbm-utils-float: true;
 
+// Namespaces
 $mbm-utils-float-namespace: "float-" !default;
 $mbm-utils-float-name-left: "left" !default;
 $mbm-utils-float-name-right: "right" !default;
 
+// Options
 $mbm-utils-float-res: false !default;
 $mbm-utils-float-breakpoints: $mbm-global-breakpoints !default;
 
 // Float Utilities namespace variable(s)
 $mbm-utils-float-var: $mbm-global-utilities-namespace +
-    $mbm-utils-float-namespace;
+	$mbm-utils-float-namespace;
+
+//
+//
+//
 
 // Float Utilities
 .#{$mbm-utils-float-var + $mbm-utils-float-name-left} {
-    @include _mbm-direction-property("float", "left");
+	float: left;
 }
 
 .#{$mbm-utils-float-var + $mbm-utils-float-name-right} {
-    @include _mbm-direction-property("float", "right");
+	float: right;
 }
 
 // Float Responsive Utilities
 @if ($mbm-utils-float-res == true) {
-    @each $breakpoint-name, $breakpoint-size in $mbm-utils-float-breakpoints {
-        @media #{$breakpoint-size} {
-            .#{$mbm-utils-float-var + $mbm-utils-float-name-left + $mbm-global-breakpoint-separator
+	@each $breakpoint-name, $breakpoint-size in $mbm-utils-float-breakpoints {
+		@media #{$breakpoint-size} {
+			.#{$mbm-utils-float-var + $mbm-utils-float-name-left + $mbm-global-breakpoint-separator
                 + $breakpoint-name {
-                @include _mbm-direction-property('float', 'left');
+                    float: left;
             }
             
             .#{$mbm-utils-float-var + $mbm-utils-float-name-right + $mbm-global-breakpoint-separator
                 + $breakpoint-name} {
-                @include _mbm-direction-property("float", "right");
-            }
-        }
-    }
+				float: right;
+			}
+		}
+	}
 }

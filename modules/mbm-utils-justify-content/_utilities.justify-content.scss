@@ -1,7 +1,6 @@
-// Options
-
 $mbm-utils-justify-content: true;
 
+// Namespaces
 $mbm-utils-justify-content-namespace: "jc-" !default;
 $mbm-utils-justify-content-name-start: "start" !default;
 $mbm-utils-justify-content-name-end: "end" !default;
@@ -9,75 +8,80 @@ $mbm-utils-justify-content-name-center: "center" !default;
 $mbm-utils-justify-content-name-between: "between" !default;
 $mbm-utils-justify-content-name-around: "around" !default;
 
+// Options
 $mbm-utils-justify-content-res: false !default;
 $mbm-utils-justify-content-breakpoints: $mbm-global-breakpoints !default;
 
 // Justify Content Utilities namespace variable(s)
 
 $mbm-utils-justify-content-var: $mbm-global-utilities-namespace +
-    $mbm-utils-justify-content-namespace;
+	$mbm-utils-justify-content-namespace;
+
+//
+//
+//
 
 // Justify Content Utilities
 .#{$mbm-utils-justify-content-var + $mbm-utils-justify-content-name-start} {
-    justify-content: flex-start !important;
+	justify-content: flex-start !important;
 }
 
 .#{$mbm-utils-justify-content-var + $mbm-utils-justify-content-name-end} {
-    justify-content: flex-end !important;
+	justify-content: flex-end !important;
 }
 
 .#{$mbm-utils-justify-content-var + $mbm-utils-justify-content-name-center} {
-    justify-content: center !important;
+	justify-content: center !important;
 }
 
 .#{$mbm-utils-justify-content-var + $mbm-utils-justify-content-name-between} {
-    justify-content: space-between !important;
+	justify-content: space-between !important;
 }
 
 .#{$mbm-utils-justify-content-var + $mbm-utils-justify-content-name-around} {
-    justify-content: space-around !important;
+	justify-content: space-around !important;
 }
 
 // Justify Content Responsive Utilities
 @if ($mbm-utils-justify-content-res == true) {
-    @each $breakpoint-name,
-        $breakpoint-size in $mbm-utils-justify-content-breakpoints
-    {
-        @media #{$breakpoint-size} {
-            .#{$mbm-utils-justify-content-var
-                + $mbm-utils-justify-content-name-start
-                + $mbm-global-breakpoint-separator
-                + $breakpoint-name} {
-                justify-content: flex-start !important;
-            }
+	@each $breakpoint-name,
+		$breakpoint-size in $mbm-utils-justify-content-breakpoints
+	{
+		@media #{$breakpoint-size} {
+			.#{$mbm-utils-justify-content-var
+				+ $mbm-utils-justify-content-name-start
+				+ $mbm-global-breakpoint-separator
+				+ $breakpoint-name} {
+				justify-content: flex-start !important;
+			}
 
-            .#{$mbm-utils-justify-content-var
-                + $mbm-utils-justify-content-name-end
-                + $mbm-global-breakpoint-separator
-                + $breakpoint-name} {
-                justify-content: flex-end !important;
-            }
+			.#{$mbm-utils-justify-content-var
+				+ $mbm-utils-justify-content-name-end
+				+ $mbm-global-breakpoint-separator
+				+ $breakpoint-name} {
+				justify-content: flex-end !important;
+			}
 
-            .#{$mbm-utils-justify-content-var
-                + $mbm-utils-justify-content-name-center
-                + $mbm-global-breakpoint-separator
-                + $breakpoint-name} {
-                justify-content: center !important;
-            }
+			.#{$mbm-utils-justify-content-var
+				+ $mbm-utils-justify-content-name-center
+				+ $mbm-global-breakpoint-separator
+				+ $breakpoint-name} {
+				justify-content: center !important;
+			}
 
-            .#{$mbm-utils-justify-content-var
-                + $mbm-utils-justify-content-name-between
-                + $mbm-global-breakpoint-separator
-                + $breakpoint-name} {
-                justify-content: space-between !important;
-            }
+			.#{$mbm-utils-justify-content-var
+				+ $mbm-utils-justify-content-name-between
+				+ $mbm-global-breakpoint-separator
+				+ $breakpoint-name} {
+				justify-content: space-between !important;
+			}
 
-            .#{$mbm-utils-justify-content-var
-                + $mbm-utils-justify-content-name-around
-                + $mbm-global-breakpoint-separator
-                + $breakpoint-name} {
-                justify-content: space-around !important;
-            }
-        }
-    }
+			.#{$mbm-utils-justify-content-var
+				+ $mbm-utils-justify-content-name-around
+				+ $mbm-global-breakpoint-separator
+				+ $breakpoint-name} {
+				justify-content: space-around !important;
+			}
+		}
+	}
 }

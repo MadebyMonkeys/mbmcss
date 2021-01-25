@@ -1,28 +1,12 @@
-/**
- * Enable / Disable breakpoint specific classes
- *
- * Type: Boolean
- */
+// Options
+$mbm-utils-align-res: false !default;
+$mbm-utils-align-breakpoints: $mbm-global-breakpoints !default;
 
-$mbm-utils-align-res: $mbm-global-res;
-
-/**
-  * Override breakpoints map only for align utility
-  *
-  * Type: Type: Map
-  */
-
-$mbm-utils-align-breakpoints: $mbm-global-breakpoints;
-
-/**
-  * Namespace classes
-  *
-  * Type: String
-  */
-$mbm-utils-align-namespace: "align-";
-$mbm-utils-align-name-top: "top";
-$mbm-utils-align-name-bottom: "bottom";
-$mbm-utils-align-name-middle: "middle";
-$mbm-utils-align-name-baseline: "baseline";
+// Namespaces
+$mbm-utils-align-namespace: "align-" !default;
+$mbm-utils-align-name-top: "top" !default;
+$mbm-utils-align-name-bottom: "bottom" !default;
+$mbm-utils-align-name-middle: "middle" !default;
+$mbm-utils-align-name-baseline: "baseline" !default;
 
 @import "../modules/mbm-utils-align/utilities.align";

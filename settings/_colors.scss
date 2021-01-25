@@ -1,0 +1,46 @@
+// Theme colors
+$color-primary: #ffcd00;
+$color-secondary: #171717;
+$color-tertiary: #747474;
+$color-quaternary: #e8e8e8;
+$color-quinary: #ffffff;
+
+// Default colors
+$color-white: #fff;
+$color-light-gray-100: #f9f9f9;
+$color-light-gray-200: #f2f2f2;
+$color-light-gray-300: #ececec;
+$color-light-gray-400: #e6e6e6;
+$color-light-gray-500: #cccccc;
+$color-light-gray-600: #b3b3b3;
+$color-gray: #aeaeae;
+$color-dark-gray-100: #999999;
+$color-dark-gray-200: #808080;
+$color-dark-gray-300: #666666;
+$color-dark-gray-400: #333333;
+$color-dark-gray-500: #2e2c2f;
+$color-dark-gray-600: #1a1a1a;
+$color-black: #000;
+
+$color-list: (
+	"primary": $color-primary,
+	"secondary": $color-secondary,
+	"tertiary": $color-tertiary,
+	"quaternary": $color-quaternary,
+	"quinary": $color-quinary,
+	"white": $color-white,
+	"light-gray-100": $color-light-gray-100,
+	"light-gray-200": $color-light-gray-200,
+	"light-gray-300": $color-light-gray-300,
+	"light-gray-400": $color-light-gray-400,
+	"light-gray-500": $color-light-gray-500,
+	"light-gray-600": $color-light-gray-600,
+	"gray": $color-gray,
+	"dark-gray-100": $color-dark-gray-100,
+	"dark-gray-200": $color-dark-gray-200,
+	"dark-gray-300": $color-dark-gray-300,
+	"dark-gray-400": $color-dark-gray-400,
+	"dark-gray-500": $color-dark-gray-500,
+	"dark-gray-600": $color-dark-gray-600,
+	"black": $color-black,
+) !default;

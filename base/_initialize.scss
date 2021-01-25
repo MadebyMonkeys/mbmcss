@@ -1,38 +1,7 @@
-/**
- * Global box sizing option
- *
- * Type: String
- */
-
-$mbm-base-initialize-box-sizing: "border-box";
-
-/**
-  * Makes all heading tags ( h1 - h6 ) to be equal
-  * to your body size.  It forces you to use heading
-  * tags with focus on your semantics and not on the
-  * way they look.
-  *
-  * Type: Boolean
-  */
-
-$mbm-base-initialize-heading-size: false;
-
-/**
-  * Enables normalize and resets for the HTML4 form
-  * elements
-  *
-  * Type: Boolean
-  */
-
-$mbm-base-initialize-form-elements: false;
-
-/**
-  * Enables normalize and resets for the HTML5 form
-  * elements
-  *
-  * Type: Boolean
-  */
-
-$mbm-base-initialize-html5-form-elements: false;
+// Options
+$mbm-base-initialize-box-sizing: "border-box" !default;
+$mbm-base-initialize-text-rendering: "optimizedSpeed" !default;
+$mbm-base-initialize-heading-size: true !default;
+$mbm-base-initialize-paragraph-bottom-space: true !default;
 
 @import "../modules/mbm-base-initialize/base.initialize";

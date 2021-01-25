@@ -1,3 +1,0 @@
-@mixin mbm-justify-content($value) {
-    @include _mbm-direction-property(justify-content, $value, false);
-}
